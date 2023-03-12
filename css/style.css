@@ -1,0 +1,283 @@
+.page {
+	font-size: 62.5%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #000000;
+	line-height: 1.5rem;
+	background-color: rgb(246, 246, 226);
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	max-width: 75vw;
+	align-items: flex-start;
+}
+
+
+.title {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+.main {
+	max-width: 75vw;
+	color: #345bd8;
+	margin: 0 auto;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 75vw;
+	height: 10vw;
+}
+
+.footer__date {
+	font-size: 3rem;
+}
+
+.link__img {
+	width: 3rem;
+	height: 3rem;
+}
+
+.link__img2 {
+	width: 6rem;
+	height: 4rem;
+}
+
+@media (hover: hover) {
+	/* when hover is supported */
+	.main:hover {
+		color: #000000;
+	}
+
+	.main:hover .wrapper__icon {
+		opacity: 1;
+	}
+
+	.wrapper__label:hover + .wrapper__img .image {
+		width: 25vw;
+		height: 25vw;
+	}
+	
+	.wrapper:hover > .wrapper__label .wrapper__icon, .wrapper__label:hover .wrapper__icon {
+		transform: rotate(45deg);
+	}
+	
+	.wrapper:hover > .wrapper__img .image {
+		width: 25vw;
+		height: 25vw;
+	}
+	
+ }
+
+ @media (hover: none) {
+	/* when hover is not supported */
+	.main .wrapper__icon {
+		opacity: 1;
+	}
+
+	.main {
+		color: #000000;
+	}
+ }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-top: rgb(164, 164, 164) solid 3px;
+	margin: 0 auto 1rem;
+}
+
+.wrapper__input {
+	width: 0;
+	height: 0;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.wrapper__input:checked ~ .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus.svg');
+	transform: rotate(45deg);
+}
+
+.wrapper__input:checked ~ .wrapper__label .wrapper__title {
+	color: #000000;
+}
+
+.wrapper__input:checked ~ .wrapper__img .image {
+	width: 25vw;
+	height: 25vw;
+}
+
+.wrapper:active .wrapper__title {
+	color: #345bd8;
+}
+
+.wrapper:active .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus2.svg');
+}
+
+.wrapper:active .wrapper__input:checked ~ .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus.svg');
+}
+
+.wrapper:active {
+	filter: opacity(.7);
+}
+
+.wrapper__label {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.wrapper__title {
+	font-size: 2rem;
+}
+
+.wrapper__icon {
+	background-image: url('../assets/plus.svg');
+	background-repeat: no-repeat;
+	background-position: cover;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	opacity: 0;
+	transition: all .5s ease;
+}
+
+.wrapper__img {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	transition: all .5s ease;
+	cursor: pointer;
+}
+
+
+.image {
+	width: 0;
+	height: 0;
+	margin: 0 auto;
+	transition: all .5s ease;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+	.header, .main, .footer {
+		max-width: 85vw;
+	}
+}
+
+@media (max-width: 1024px) {
+	.header, .main, .footer {
+		max-width: 90vw;
+	}
+	.title {
+		font-size: 2.5rem;
+	}
+
+	.wrapper__title {
+		font-size: 1.9rem;
+	}
+
+	.wrapper__icon {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	.wrapper__input:checked ~ .wrapper__img .image {
+		width: 50vw;
+		height: 50vw;
+	}
+}
+
+@media (max-width: 768px) {
+	.header, .main, .footer {
+		max-width: 95vw;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.wrapper__title {
+		font-size: 1.5rem;
+	}
+
+	.wrapper__icon {
+		width: 1.9rem;
+		height: 1.9rem;
+	}
+
+	.wrapper__input:checked ~ .wrapper__img .image {
+		width: 60vw;
+		height: 60vw;
+	}
+
+	.footer__date {
+		font-size: 2rem;
+	}
+	
+	.link__img {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+	
+	.link__img2 {
+		width: 5rem;
+		height: 3rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.wrapper__title {
+		font-size: 1.3rem;
+	}
+
+	.wrapper__icon {
+		width: 1.7rem;
+		height: 1.7rem;
+	}
+
+	.wrapper__input:checked ~ .wrapper__img .image {
+		width: 70vw;
+		height: 70vw;
+	}
+
+	.footer__date {
+		font-size: 1rem;
+	}
+	
+	.link__img {
+		width: 2rem;
+		height: 2rem;
+	}
+	
+	.link__img2 {
+		width: 4rem;
+		height: 2rem;
+	}
+}
