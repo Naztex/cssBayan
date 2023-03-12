@@ -87,6 +87,7 @@
 }
 
 .wrapper__input:checked ~ .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus.svg');
 	transform: rotate(45deg);
 }
 
@@ -103,8 +104,16 @@
 	color: #345bd8;
 }
 
-.wrapper:active .wrapper__icon path {
-	fill: #345bd8;
+.wrapper:active .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus2.svg');
+}
+
+.wrapper:active .wrapper__input:checked ~ .wrapper__label .wrapper__icon {
+	background-image: url('../assets/plus.svg');
+}
+
+.wrapper:active {
+	filter: opacity(.7);
 }
 
 .wrapper__label {
@@ -122,11 +131,9 @@
 
 .wrapper__icon {
 	background-image: url('../assets/plus.svg');
-	background-position: center;
-	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: cover;
 	display: block;
-	color: #000000;
 	width: 3rem;
 	height: 3rem;
 	opacity: 0;
